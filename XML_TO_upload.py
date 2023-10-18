@@ -68,8 +68,8 @@ order_dict = get_stock_qty(xroot)
 df1 = pd.DataFrame(list(order_dict.items()))
 # wella file requires specific headers EAN and quantity
 if supplier == "Wella":
-    df1.columns = ['EAN', 'quantity']
-    df1['EAN'] = df1['EAN'].astype('int64')
+    df1.columns = ['product_id', 'quantity']
+    df1['product_id'] = df1['product_id'].astype('int64')
     df1['quantity'] = df1['quantity'].astype('int64')
     writ_exel(df1)
 
